@@ -1,0 +1,28 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class NameCorrector {
+    public static void main(String[] args) {
+        // Create a map of incorrect names to correct names
+        Map<String, String> nameCorrections = new HashMap<>();
+        nameCorrections.put("Jhon", "John");
+        nameCorrections.put("Micheal", "Michael");
+        nameCorrections.put("Sara", "Sarah");
+        nameCorrections.put("Tommy", "Tom");
+
+        // Example list of names to correct
+        String[] names = {"Jhon", "Micheal", "Sara", "Tommy", "Alice"};
+
+        // Correct the names
+        for (int i = 0; i < names.length; i++) {
+            if (nameCorrections.containsKey(names[i])) {
+                names[i] = nameCorrections.get(names[i]);
+            }
+        }
+
+        // Print the corrected names
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
+}
