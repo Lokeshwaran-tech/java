@@ -1,0 +1,21 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class GuessTheDiceNumber {
+    public static void main(String[] args) {
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        int diceNumber = random.nextInt(6) + 1; // Generates a number between 1 and 6
+
+        System.out.println("Guess The No Of The Dice (1-6): ");
+        int userGuess = scanner.nextInt();
+
+        if (userGuess == diceNumber) {
+            System.out.println("Congratulations! You guessed the correct number: " + diceNumber);
+        } else {
+            System.out.println("Sorry, the correct number was: " + diceNumber);
+        }
+
+        scanner.close();
+    }
+}
