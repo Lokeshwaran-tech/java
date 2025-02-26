@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class MinMaxFinder {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number of elements:");
+        int n = scanner.nextInt();
+        
+        if (n <= 0) {
+            System.out.println("Number of elements must be greater than zero.");
+            return;
+        }
+
+        int[] elements = new int[n];
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            elements[i] = scanner.nextInt();
+        }
+
+        int min = elements[0];
+        int max = elements[0];
+
+        for (int i = 1; i < n; i++) {
+            if (elements[i] < min) {
+                min = elements[i];
+            }
+            if (elements[i] > max) {
+                max = elements[i];
+            }
+        }
+
+        System.out.println("Minimum element: " + min);
+        System.out.println("Maximum element: " + max);
+    }
+}
